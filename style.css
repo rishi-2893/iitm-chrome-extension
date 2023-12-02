@@ -7,12 +7,12 @@
   --light-secondary-background: #dfdcdc;
 }
 
-/* .gcb-mcq-choice label {
+.gcb-mcq-choice label {
   font-size: x-large !important;
 }
 .qt-question {
   font-size: x-large;
-} */
+}
 .gcb-question-row {
   background-color: var(--dark-secondary-background) !important;
   color: var(--dark-secondary-text);
