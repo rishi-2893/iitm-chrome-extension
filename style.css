@@ -1,7 +1,64 @@
-.gcb-mcq-choice label{
-    font-size: x-large !important;
+:root {
+  --dark-primary-background: #000;
+  --dark-secondary-background: #444242;
+  --dark-primary-text: #fff;
+  --dark-secondary-text: #dfdcdc;
+  --light-primary-background: #fff;
+  --light-secondary-background: #dfdcdc;
 }
 
-.qt-question{
-    font-size: x-large;
+/* .gcb-mcq-choice label {
+  font-size: x-large !important;
+}
+.qt-question {
+  font-size: x-large;
+} */
+.gcb-question-row {
+  background-color: var(--dark-secondary-background) !important;
+  color: var(--dark-secondary-text);
+}
+.ng-star-inserted,
+units__subitems-text {
+  background-color: var(--dark-primary-background) !important;
+  color: var(--dark-primary-text) !important;
+  background-clip: border-box;
+}
+.units__items-title {
+  color: var(--dark-primary-text);
+  /* background-color: var(--light-primary-background); */
+}
+.modules__content-head-title {
+  color: var(--dark-secondary-text);
+}
+.header {
+  background-color: var(--dark-primary-background) !important;
+}
+.ng-tns-c29-0 {
+  background-color: white;
+  color: #444242;
+}
+.modules__content-head-title > div {
+  color: white;
+}
+.btn-feedback {
+  color: white !important;
+}
+.opened > .ng-star-inserted {
+  background-color: var(--light-primary-background);
+}
+.qt-response > input {
+  color: var(--dark-primary-text) !important;
+}
+.header__email > span {
+  color: var(--dark-primary-text);
+}
+span[class="ng-tns-c29-0"] {
+  background-color: var(--dark-primary-background);
+}
+.opened > .units__subitems-title > span[class="ng-star-inserted"] {
+  color: var(--dark-primary-background) !important;
+  background-color: var(--light-primary-background) !important;
+}
+.opened .still-time-icon {
+  background-color: var(--light-primary-background) !important;
 }
