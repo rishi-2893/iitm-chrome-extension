@@ -1,10 +1,14 @@
 :root {
-  --dark-primary-background: #000;
-  --dark-secondary-background: #444242;
+  --dark-primary-background: #444242;
+  --dark-secondary-background: #5a5454;
+  --dark-active-primary-background: #656474;
+  --dark-active-secondary-background: #cfc1c1;
   --dark-primary-text: #fff;
   --dark-secondary-text: #dfdcdc;
   --light-primary-background: #fff;
   --light-secondary-background: #dfdcdc;
+  --light-primary-text: #444242;
+  --light-secondary-text: #5a5454;
 }
 
 .gcb-mcq-choice label {
@@ -12,6 +16,12 @@
 }
 .qt-question {
   font-size: x-large;
+}
+.opened {
+  background-color: var(--dark-active-primary-background) !important;
+}
+.units__subitems-text .opened[_ngcontent-lqq-c78] {
+  background-color: var(--dark-active-primary-background) !important;
 }
 .gcb-question-row {
   background-color: var(--dark-secondary-background) !important;
@@ -23,9 +33,9 @@ units__subitems-text {
   color: var(--dark-primary-text) !important;
   background-clip: border-box;
 }
+
 .units__items-title {
   color: var(--dark-primary-text);
-  /* background-color: var(--light-primary-background); */
 }
 .modules__content-head-title {
   color: var(--dark-secondary-text);
@@ -43,10 +53,8 @@ units__subitems-text {
 .btn-feedback {
   color: white !important;
 }
-.opened > .ng-star-inserted {
-  background-color: var(--light-primary-background);
-}
 .qt-response > input {
+  font-size: x-large;
   color: var(--dark-primary-text) !important;
 }
 .header__email > span {
@@ -56,9 +64,16 @@ span[class="ng-tns-c29-0"] {
   background-color: var(--dark-primary-background);
 }
 .opened > .units__subitems-title > span[class="ng-star-inserted"] {
-  color: var(--dark-primary-background) !important;
-  background-color: var(--light-primary-background) !important;
+  color: var(--dark-secondary-text) !important;
+  background-color: var(--dark-active-primary-background) !important;
 }
 .opened .still-time-icon {
-  background-color: var(--light-primary-background) !important;
+  background-color: var(--dark-active-primary-background) !important;
+}
+.units__container__sidenav__option__selected[_ngcontent-lqq-c85] {
+  color: var(--dark-primary-text) !important;
+  background-color: var(--dark-active-secondary-background) !important;
+}
+.qt-grade-report {
+  color: var(--dark-secondary-text) !important;
 }
