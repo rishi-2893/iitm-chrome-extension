@@ -9,7 +9,7 @@
     "128": "images/icon-128.png"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "scripts/background.js"
   },
   "action": {
     "default_icon": {
@@ -19,5 +19,11 @@
       "128": "images/icon-128.png"
     }
   },
-  "permissions": ["scripting", "activeTab"]
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://seek.onlinedegree.iitm.ac.in/courses/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
 }
