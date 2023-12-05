@@ -1,41 +1,47 @@
-chrome.runtime.onInstalled.addListener(() => {
-    // The action's badge is a colored banner on top of the extension action
-    chrome.action.setBadgeText({
-      text: 'OFF'
-    });
-  });
-  
-  const extensions = 'https://seek.onlinedegree.iitm.ac.in/courses';
-  
-  // When the user clicks on the extension action
-  // in our case extension action is the icons we have set in manifest.json
-  chrome.action.onClicked.addListener(async (tab) => {
-    if (tab.url.startsWith(extensions)) {
-      // We retrieve the action badge to check if the extension is 'ON' or 'OFF'
-      const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
-      // Next state will always be the opposite
-      const nextState = prevState === 'ON' ? 'OFF' : 'ON';
-  
-      // Set the action badge to the next state
-      await chrome.action.setBadgeText({
-        tabId: tab.id,
-        text: nextState
+const extensions = "https://seek.onlinedegree.iitm.ac.in/courses";
+
+// listen message from content script
+chrome.runtime.onMessage.addListener(async (obj, sender, response) => {
+  const { type, value } = obj;
+
+  if (type == "toggleTheme") {
+    if (value == true) {
+      await chrome.scripting.insertCSS({
+        files: ["styles/theme.css"],
+        target: { tabId: sender.tab.id },
       });
-  
-      if (nextState === 'ON') {
-        // Insert the CSS file when the user turns the extension on
-        await chrome.scripting.insertCSS({
-          files: ['styles/style.css'],
-          target: { tabId: tab.id }
-        });
-      } else if (nextState === 'OFF') {
-        // Remove the CSS file when the user turns the extension off
-        await chrome.scripting.removeCSS({
-          files: ['styles/style.css'],
-          target: { tabId: tab.id }
-        });
-      }
+    } else {
+      await chrome.scripting.removeCSS({
+        files: ["styles/theme.css"],
+        target: { tabId: sender.tab.id },
+      });
     }
-  
-  });
-  
+  }
+
+  if (type == "changeFontSize") {
+    if (value == 1) {
+      await chrome.scripting.removeCSS({
+        files: ["styles/font-large.css", "styles/font-x-large.css"],
+        target: { tabId: sender.tab.id },
+      });
+    } else if (value == 2){
+      await chrome.scripting.removeCSS({
+        files: ["styles/font-large.css"],
+        target: { tabId: sender.tab.id },
+      });
+      await chrome.scripting.insertCSS({
+        files: ["styles/font-large.css"],
+        target: { tabId: sender.tab.id },
+      });
+    } else if (value == 3){
+      await chrome.scripting.removeCSS({
+        files: ["styles/font-large.css"],
+        target: { tabId: sender.tab.id },
+      });
+      await chrome.scripting.insertCSS({
+        files: ["styles/font-x-large.css"],
+        target: { tabId: sender.tab.id },
+      });
+    }
+  }
+});

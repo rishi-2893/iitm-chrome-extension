@@ -1,0 +1,9 @@
+.gcb-mcq-choice label {
+    font-size: x-large !important;
+    }
+    .qt-question {
+    font-size: x-large;
+    }
+    .qt-response > input {
+    font-size: x-large;
+    }
