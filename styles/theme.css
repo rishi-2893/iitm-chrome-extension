@@ -1,72 +1,113 @@
 :root {
-    --dark-primary-background: #444242;
-    --dark-secondary-background: #5a5454;
-    --dark-active-primary-background: #656474;
-    --dark-active-secondary-background: #cfc1c1;
-    --dark-primary-text: #fff;
-    --dark-secondary-text: #dfdcdc;
-    --light-primary-background: #fff;
-    --light-secondary-background: #dfdcdc;
-    --light-primary-text: #444242;
-    --light-secondary-text: #5a5454;
-  }
-  
-  .opened {
-    background-color: var(--dark-active-primary-background) !important;
-  }
-  .units__subitems-text .opened[_ngcontent-lqq-c78] {
-    background-color: var(--dark-active-primary-background) !important;
-  }
-  .gcb-question-row {
-    background-color: var(--dark-secondary-background) !important;
-    color: var(--dark-secondary-text);
-  }
-  .ng-star-inserted,
-  units__subitems-text {
-    background-color: var(--dark-primary-background) !important;
-    color: var(--dark-primary-text) !important;
-    background-clip: border-box;
-  }
-  
-  .units__items-title {
-    color: var(--dark-primary-text);
-  }
-  .modules__content-head-title {
-    color: var(--dark-secondary-text);
-  }
-  .header {
-    background-color: var(--dark-primary-background) !important;
-  }
-  .ng-tns-c29-0 {
-    background-color: white;
-    color: #444242;
-  }
-  .modules__content-head-title > div {
-    color: white;
-  }
-  .btn-feedback {
-    color: white !important;
-  }
-  .qt-response > input {
-    color: var(--dark-primary-text) !important;
-  }
-  .header__email > span {
-    color: var(--dark-primary-text);
-  }
-  span[class="ng-tns-c29-0"] {
-    background-color: var(--dark-primary-background);
-  }
-  .opened > .units__subitems-title > span[class="ng-star-inserted"] {
-    color: var(--dark-secondary-text) !important;
-    background-color: var(--dark-active-primary-background) !important;
-  }
-  .opened .still-time-icon {
-    background-color: var(--dark-active-primary-background) !important;
-  }
-  .units__container__sidenav__option__selected[_ngcontent-lqq-c85] {
-    color: var(--dark-primary-text) !important;
-    background-color: var(--dark-active-secondary-background) !important;
-  }
-  .qt-grade-report {
-    color: var(--dark-secondary-text) !important;
-  }
+  --dark-primary-background: #181a1b;
+  --dark-secondary-background: #1a1c1e;
+  --dark-primary-text: #d3cfc9;
+  --dark-secondary-text: #afa89d;
+  --navbar-background: #3a4156;
+}
+
+body {
+  background-color: var(--dark-primary-background) !important;
+}
+.opened {
+  background-color: var(--dark-secondary-background) !important;
+  border-left-color: rgb(133, 95, 25) !important;
+  color: var(--dark-secondary-text) !important;
+}
+.gcb-question-row {
+  background-color: var(--dark-primary-background) !important;
+  color: var(--dark-primary-text);
+  box-shadow: 2px 3px 5px #27292b !important;
+}
+.ng-star-inserted,
+units__subitems-text {
+  background-color: var(--dark-secondary-background) !important;
+  color: var(--dark-primary-text) !important;
+  background-clip: border-box;
+}
+.units__items-title {
+  color: var(--dark-secondary-text);
+}
+.modules__content-head-title > div {
+  color: var(--dark-primary-text) !important;
+}
+.header {
+  background-color: var(--dark-primary-background) !important;
+  color: var(--dark-secondary-text) !important;
+}
+.header > div {
+  background-color: var(--dark-primary-background) !important;
+  color: var(--dark-secondary-text) !important;
+}
+.ng-tns-c29-0 {
+  background-color: none;
+  color: #444242;
+}
+.btn-feedback {
+  color: var(--dark-secondary-text) !important;
+}
+.qt-response > input {
+  color: var(--dark-primary-text) !important;
+}
+.header__email > span {
+  color: var(--dark-secondary-text);
+}
+span[class="ng-tns-c29-0"] {
+  background-color: var(--dark-primary-background);
+}
+.opened > .units__subitems-title > span[class="ng-star-inserted"] {
+  color: var(--dark-secondary-text) !important;
+  background-color: var(--dark-primary-background) !important;
+}
+div.units__subitems-title > span.ng-star-inserted{
+  color: var(--dark-secondary-text) !important;
+}
+.opened .still-time-icon {
+  background-color: var(--dark-primary-background) !important;
+}
+.units__container__sidenav__option__selected {
+  color: var(--dark-secondary-text) !important;
+  background-color: var(--dark-primary-background) !important;
+}
+.ghost-loader:before {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0px,
+    rgb(43, 47, 49) 50%,
+    rgba(0, 0, 0, 0)
+  ) !important;
+}
+div.modules__content-head-title.ghost-loader {
+  background-color: var(--dark-primary-background);
+}
+.circle-icon.ng-star-inserted{
+  border: 4px solid #383d40 !important;
+}
+.units__items-icon.circle-icon{
+  border: 4px solid #383d40 !important;
+}
+.hide-outline-btn{
+  border: 6px solid #383d40 !important;
+}
+.gcb-button.qt-check-answer-button{
+  background-color: rgb(22, 22, 32);
+  color: rgb(232, 230, 227);
+}
+p.content{
+  color: var(--dark-secondary-text) !important;
+}
+button.btn.btn-link.btn-submit.ng-star-inserted{
+  background-color: var(--navbar-background) !important;
+}
+div.qt-feedback span.correct{
+  color: rgb(89, 250, 180);
+}
+div.qt-feedback span.incorrect{
+  color: rgb(255, 67, 67);
+}
+div.qt-feedback h3.feedback-header.faculty-answer{
+  color: rgb(89, 250, 180);
+}
+div.faculty-answer{
+  color: rgb(89, 250, 180);
+}

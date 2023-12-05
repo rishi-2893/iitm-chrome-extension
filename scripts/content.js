@@ -35,6 +35,7 @@ const parentElement = document.querySelector(
   "#main-block > app-header > header > div.header__email.ng-tns-c29-0.ng-star-inserted"
 );
 
+
 // Create the theme switch
 const themeSwitch = document.createElement("div");
 themeSwitch.setAttribute("class", "form-check form-switch");
@@ -90,12 +91,14 @@ parentElement.insertBefore(fontSizeInput, parentElement.firstChild);
 //----------------------------ADDING EVENT LISTENERS------------------
 
 // Add event listener to the theme switch
-themeSwitch.addEventListener("change", () => {
+themeSwitch.addEventListener("change", async ()=> {
   // Send message to background script
   chrome.runtime.sendMessage({
     type: "toggleTheme",
     value: themeSwitchInput.checked,
   });
+  // Add value themeSwitchInput.checked to storage using chrome.storage.sync.set
+  chrome.storage.sync.set({ themeSwitchValue: themeSwitchInput.checked });
 });
 
 // Add event listener to the font size input
