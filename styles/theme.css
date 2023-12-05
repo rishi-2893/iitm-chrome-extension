@@ -78,7 +78,7 @@ div.units__subitems-title > span.ng-star-inserted{
   ) !important;
 }
 div.modules__content-head-title.ghost-loader {
-  background-color: var(--dark-primary-background);
+  background-color: var(--dark-primary-background) !important;
 }
 .circle-icon.ng-star-inserted{
   border: 4px solid #383d40 !important;
@@ -110,4 +110,22 @@ div.qt-feedback h3.feedback-header.faculty-answer{
 }
 div.faculty-answer{
   color: rgb(89, 250, 180);
+}
+div.modules__content-main > div.objectives *{
+  color: var(--dark-primary-text) !important;
+}
+div[_ngcontent-rkj-c83].grades{
+  background-color: var(--dark-primary-background) !important;
+}
+div[_ngcontent-rkj-c83].module-title{
+  color: var(--dark-secondary-text) !important;
+}
+div.ghost-loader.ghost-loader-spacer{
+  background-color: var(--dark-primary-background) !important;
+}
+.grades[_ngcontent-cmc-c83]{
+  background-color: var(--dark-secondary-background) !important;
+}
+div.units__items-text > div.ghost-loader.units__items-title{
+  background: var(--dark-primary-background) !important;
 }
