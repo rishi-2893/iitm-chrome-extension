@@ -32,11 +32,11 @@ injectElement(
 
 // Select the parent element
 const parentElement = document.querySelector(
-  "#main-block > app-header > header > div.header__email.ng-tns-c29-0.ng-star-inserted"
+  "#main-block > app-header > header > div.header__email.ng-star-inserted"
 );
 
 //------------------RETRIEVING VALUES-------------------
-chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
+chrome.storage.sync.get(["themeSwitchState", "fontSizeValue"], (result) => {
   // Create the theme switch
   const themeSwitch = document.createElement("div");
   themeSwitch.setAttribute("class", "form-check form-switch");
@@ -46,7 +46,7 @@ chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
   themeSwitchInput.setAttribute("role", "switch");
   themeSwitchInput.setAttribute("id", "flexSwitchCheckDefault");
   themeSwitch.appendChild(themeSwitchInput);
-  
+
   // theme switch label
   const themeSwitchLabel = document.createElement("label");
   themeSwitchLabel.setAttribute("class", "form-check-label");
@@ -54,18 +54,18 @@ chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
   themeSwitchLabel.textContent = "Theme";
   // insert theme switch label
   themeSwitch.appendChild(themeSwitchLabel);
-  
+
   // Insert the theme switch
   parentElement.insertBefore(themeSwitch, parentElement.firstChild);
-  
+
   // insert separator
   const separator = document.createElement("div");
   separator.setAttribute("class", "separator ng-tns-c29-0");
   separator.setAttribute("_ngcontent-ywe-c29", "");
   parentElement.insertBefore(separator, parentElement.firstChild);
-  
+
   //----------------------------------------------------------
-  
+
   // Create a new label element for the range input
   const fontSizeLabel = document.createElement("label");
   fontSizeLabel.setAttribute("for", "customRange3");
@@ -73,7 +73,7 @@ chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
   fontSizeLabel.textContent = "Font size";
   fontSizeLabel.classList.add("ms-2");
   fontSizeLabel.classList.add("mt-2");
-  
+
   // Create a new input element (range)
   const fontSizeInput = document.createElement("input");
   fontSizeInput.style.width = "43px";
@@ -84,15 +84,15 @@ chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
   fontSizeInput.setAttribute("step", "1");
   fontSizeInput.setAttribute("id", "customRange3");
   fontSizeInput.value = 1;
-  
+
   // insert
   parentElement.insertBefore(fontSizeLabel, parentElement.firstChild);
   parentElement.insertBefore(fontSizeInput, parentElement.firstChild);
-  
+
   //----------------------------ADDING EVENT LISTENERS------------------
-  
+
   // Add event listener to the theme switch
-  themeSwitch.addEventListener("change", ()=> {
+  themeSwitch.addEventListener("change", () => {
     chrome.storage.sync.set({ themeSwitchState: themeSwitchInput.checked });
     // Send message to background script
     chrome.runtime.sendMessage({
@@ -100,7 +100,7 @@ chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
       value: themeSwitchInput.checked,
     });
   });
-  
+
   // Add event listener to the font size input
   fontSizeInput.addEventListener("input", () => {
     // Save the font size value to Chrome storage
@@ -110,7 +110,7 @@ chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
       type: "changeFontSize",
       value: fontSizeInput.value,
     });
-  })
+  });
   // Set the theme switch state
   if (result.themeSwitchState !== undefined) {
     themeSwitchInput.checked = result.themeSwitchState;
@@ -125,11 +125,11 @@ chrome.storage.sync.get(['themeSwitchState', 'fontSizeValue'], (result) => {
   chrome.runtime.sendMessage({
     type: "toggleTheme",
     value: themeSwitchInput.checked,
-  })
+  });
 
   // Send message to background script
   chrome.runtime.sendMessage({
     type: "changeFontSize",
     value: fontSizeInput.value,
-  })
+  });
 });
